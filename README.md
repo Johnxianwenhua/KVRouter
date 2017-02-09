@@ -69,4 +69,5 @@ __weak __typeof(&*self)weakSelf = self; //这里的弱引用可以使用宏定�
     }];
 }
 ```
-更多的使用方法请查看Demo
+###该路由除了可以处理push之外也可以处理present形式
+###更多的使用方法请查看Demo
