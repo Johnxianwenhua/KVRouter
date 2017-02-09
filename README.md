@@ -45,6 +45,15 @@ __weak __typeof(&*self)weakSelf = self; //这里的弱引用可以使用宏定�
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
 */
 [KVRouter openUrl:url parameter:parameter complete:^(UIViewController *object) {
-    ((OneController*)object).delegate = weakSelf;
+    ((OneController*)object).delegate = weakSelf; //这里可以设置代理等操作
  }];
 ```
+界面创建内部默认使用init的方式进行创建，如果需要自定义创建方式，可以在界面的load方法进行自定义，代码如下：
+```
++ (void)load {
+    [KVRouter registerUrl:@"main/two" toHandler:^UIViewController *{
+        return [[self alloc] init]; //这里可以使用自定义的创建方式，什么工厂方法啊都可以
+    }];}
+};
+```
+推荐的注册界面的方式
