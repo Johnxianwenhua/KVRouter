@@ -70,7 +70,12 @@ __weak __typeof(&*self)weakSelf = self; //这里的弱引用可以使用宏定�
 }
 ```
 
-####你好
-
+###自定义导航推出
+默认形式的导航推出可以修改成自己项目中适合的形式，这样就不需要每次推出界面都向路由器传递一个推出的导航控制器，具体修改看下图：
+修改前
+![修改前](https://raw.githubusercontent.com/kevin930119/KVRouter/master/xiugai.png)
+修改后
+![修改后](https://raw.githubusercontent.com/kevin930119/KVRouter/master/xiugai1.png)
+另外，在弹出控制器的时候，大部分情况是需要包装一层导航控制器的，默认使用系统的导航进行包装，可以使用block回调进行包装，也可以通过修改内部源码进行包装，已经在代码内部标识#warning了
 ###该路由除了可以处理push之外也可以处理present形式
 ###更多的使用方法请查看Demo
