@@ -20,9 +20,31 @@
 ```
 [KVRouter openUrl:@"main/three"]; //将会使用内部默认形式推出界面
 ```
+向下方界面传参
 ```
 //可以在链接里面传参，也可以在参数里面传参，在这里链接加上了项目scheme，如果不加也是可以的
 NSString * url = @"kv://main/one?userid=12345";
 NSDictionary * parameter = @{@"id" : @"gsjdfgjhsgdhfjg"};
 [KVRouter openUrl:url parameter:parameter];
+```
+在下方界面接收参数，只需要重写一个方法，即可完成参数接收
+```
+//传递过来的参数，以字典的形式，使用者不需要做其他操作，只需要在需要接收参数的地方重写这个方法即可接收到传参
+- (void)router:(KVRouter *)router getParameter:(NSDictionary *)parameter {
+    NSLog(@"%@", parameter);
+}
+```
+也可以使用回调进行代理等操作
+```
+//可以在链接里面传参，也可以在参数里面传参，在这里链接加上了项目scheme，如果不加也是可以的
+NSString * url = @"kv://main/one?userid=12345";
+NSDictionary * parameter = @{@"id" : @"gsjdfgjhsgdhfjg"};
+//使用默认形式推出控制器
+__weak __typeof(&*self)weakSelf = self; //这里的弱引用可以使用宏定义来快速创建
+/*
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
+*/
+[KVRouter openUrl:url parameter:parameter complete:^(UIViewController *object) {
+    ((OneController*)object).delegate = weakSelf;
+ }];
 ```
