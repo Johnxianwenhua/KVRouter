@@ -18,5 +18,11 @@
 
 简单使用
 ```
-[KVRouter openUrl:@"main/three"
+[KVRouter openUrl:@"main/three"]; //将会使用内部默认形式推出界面
+```
+```
+//可以在链接里面传参，也可以在参数里面传参，在这里链接加上了项目scheme，如果不加也是可以的
+NSString * url = @"kv://main/one?userid=12345";
+NSDictionary * parameter = @{@"id" : @"gsjdfgjhsgdhfjg"};
+[KVRouter openUrl:url parameter:parameter];
 ```
