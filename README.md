@@ -14,6 +14,6 @@
 首先需要在提供的配置文件中进行界面注册，使用者也可以根据自己的项目对配置文件以及解析方式进行修改。
 
 
-![配置文件](http://github.com/kevin930119/KVRouter/raw/master/peizhiwenjian.png)
+![配置文件](https://raw.githubusercontent.com/kevin930119/KVRouter/master/peizhiwenjian.png)
 
 可以
