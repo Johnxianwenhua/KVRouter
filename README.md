@@ -16,4 +16,7 @@
 
 ![配置文件](https://raw.githubusercontent.com/kevin930119/KVRouter/master/peizhiwenjian.png)
 
-可以
+简单使用
+```
+[KVRouter openUrl:@"main/three"
+```
