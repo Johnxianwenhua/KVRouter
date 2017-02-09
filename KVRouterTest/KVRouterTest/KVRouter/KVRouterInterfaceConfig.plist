@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>description</key>
+			<string>主页第二个界面</string>
+			<key>native_url</key>
+			<string>main/two</string>
+			<key>object</key>
+			<string>TwoController</string>
+		</dict>
+		<dict>
+			<key>description</key>
+			<string>主页一个界面</string>
+			<key>object</key>
+			<string>OneController</string>
+			<key>native_url</key>
+			<string>main/one</string>
+		</dict>
+	</array>
+</array>
+</plist>
