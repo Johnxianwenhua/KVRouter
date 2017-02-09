@@ -56,4 +56,17 @@ __weak __typeof(&*self)weakSelf = self; //这里的弱引用可以使用宏定�
     }];}
 };
 ```
-推荐的注册界面的方式
+推荐的注册界面的方式是通过配置文件进行注册的，但有些时候，开发者忘记往配置文件中注册或者根本就不想往配置文件中注册时也可以使用上方的注册方法进行注册
+```
++ (void)load {
+    //这里的url没有被注册进plist文件，但是依然可以使用该API将类注册
+    [KVRouter registerUrl:@"main/three" toHandler:^UIViewController *{
+        //自定义创建
+        UITableViewController * vc = [[self alloc] initWithStyle:UITableViewStylePlain];
+        //也可以对该控制器进行初步赋值
+        vc.title = @"第三个";
+        return vc;
+    }];
+}
+```
+更多的使用方法请查看Demo
